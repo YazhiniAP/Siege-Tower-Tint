@@ -24,9 +24,11 @@ class Box{
         }else{
           push();
           fill(color);
-          World.remove(world,this.body);
+          
           this.visible = this.visible - 5;
           tint(255,this.visible);
+            if(this.visible===0)
+                World.remove(world,this.body);
           //rect(this.body.position.x, this.body.position.y,this.width,this.height);
           pop();
         }
